@@ -1,0 +1,200 @@
+*{
+    margin: 0;
+    padding: 0;
+}
+.container{
+    width: 100%;
+    height: 100vh;
+    background: url(./images/IZMIR.png) center no-repeat;
+    background-size: cover;
+}
+.banner{
+    position: absolute;
+    top: 35%;
+    left: 50%;
+    transform: translateX(-50%);
+    text-align: center;
+    overflow: hidden;
+}
+.banner::after{
+    content:  '';
+    width: 250%;
+    height: 100%;
+    background: linear-gradient(to right, transparent, rgb(113, 160, 214), rgb(9, 70, 169));
+    position: absolute;
+    top: 0;
+    right: 0;
+    animation: bannerAnim  3s linear forwards;
+}
+@keyframes bannerAnim{
+    0%{ right: 0}
+    100%{right: -250%}
+}
+.banner h1{
+    color: rgb(232, 220, 220);
+    text-shadow: 4px 0 rgb(70, 40, 167);
+    font-family: 'Ubuntu', sans-serif;
+    font-size: 75px;
+    margin-bottom: 100px;
+    border-top: 5px solid rgb(232, 220, 220);
+    border-bottom: 5px solid rgb(232, 220, 220);
+   
+}
+.banner button{
+    width: 230px;
+    padding: 10px;
+    background: linear-gradient(to right, rgb(103, 103, 208) ,rgb(136, 34, 136), rgb(227, 227, 121)
+    );
+    font-family: 'Dosis',sans-serif;
+    font-size: 25px;
+    letter-spacing: 2px;
+    color: #fff;
+    border-radius:100px;
+    outline: none;
+    border: 1px solid #fff;
+    transform: perspective(500px) rotateY(-15deg);
+    text-shadow: 6px 3px 2px rgba(0, 0, 0, .4);
+    cursor: pointer;
+    overflow: hidden;
+    animation: buttonAnim 1s 2.5s backwards;
+    transition: all .5s;
+}
+.banner button:hover{
+    transform: perspective(500px) rotateY(15deg);
+    text-shadow: -6px 3px 2px rgba(0, 0, 0, .4);
+    background: linear-gradient(to left, rgb(103, 103, 208) ,rgb(136, 34, 136), rgb(227, 227, 121)
+    );
+}
+@keyframes buttonAnim{
+    0% { opacity: 0}
+    100% { opacity: 1}
+}
+.banner button::before{
+    content: '';
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(to right, transparent , #fff ,transparent);
+    position: absolute;
+    top: 0;
+    left: -100%;
+    transform: skewX(-30deg);
+    transition: left .5s;
+}
+.banner button:hover::before{
+    left: 100%;
+}
+
+.slideshow-wrapper{
+   overflow: hidden;
+   opacity: 0;
+   visibility: hidden;
+   transition: opacity 1s;
+}
+.slideshow{
+    display: flex;
+    width: 400%;
+    height: 100%;
+    position: relative;
+    animation: slideshow 24s infinite;
+}
+@keyframes slideshow {
+    0% {left: 0}
+    10% {left: 0}
+    15% {left: -100%}
+    25% {left: -100%}
+    30% {left: -200%}
+    40% {left: -200%}
+    45% {left: -300%}
+    55% {left: -300%}
+    60% {left: -200%}
+    70% {left: -200%}
+    75% {left: -100%}
+    85% {left: -100%}
+    90% {left: 0}
+
+}
+.slide{
+    width: 100%;
+    height: 100vh;
+}
+.slide:nth-child(1){
+    background:  linear-gradient(100deg, rgb(1, 39, 104),transparent), url(./images/cesme.jpeg) center no-repeat;
+    background-size: cover;
+}
+.slide:nth-child(2){
+    background: linear-gradient(100deg, rgb(1, 39, 104),transparent), url(./images/urla1.jpeg) center no-repeat;
+    background-size: cover;
+}
+.slide:nth-child(3){
+    background: linear-gradient(100deg, rgb(1, 39, 104),transparent),url(./images/foca.webp) center no-repeat;
+    background-size: cover;
+}
+.slide:nth-child(4){
+    background: linear-gradient(100deg, rgb(1, 39, 104),transparent), url(./images/teos.jpeg) center no-repeat;
+    background-size: cover;
+}
+.content{
+    width: 500px;
+    position: relative;
+    top: 35%;
+    left: 5%;
+}
+.content h3{
+    font-family: 'Oswald', sans-serif;
+    font-size: 60px;
+    font-weight: 400;
+    color: #fff;
+}
+.content p{
+    font-family: 'Dosis',sans-serif;
+    font-size: 20px;
+    color: #ccc;
+}
+.content button{
+    width: 130px;
+    padding: 10px 10px 0 0 ;
+    margin-top: 30px;
+    background-color: transparent;
+    border: none;
+    outline: none;
+    font-family: 'Oswald', sans-serif;
+    font-size: 20px;
+    font-weight: 400;
+    letter-spacing: 1px;
+    color: #fff;
+    border-bottom: 1px solid #fff;
+    cursor: pointer;
+}
+.content i{
+    margin-left: 8px;
+}
+@media(max-width: 600px){
+ .banner h1{
+    font-size: 60px;
+ }
+ .banner button {
+    width: 180px;
+    padding: 7px;
+    font-size: 20px;
+ }
+ .content{
+    width: 300px;
+ }
+ .content h3{
+    font-size: 30px;
+ }
+ .content p{
+    font-size: 15px;
+ }
+}
+@media(max-width: 320px){
+    .content{
+        width: 200px;
+     }
+     .content h3{
+        font-size: 30px;
+     }
+     .content p{
+        font-size: 12px;
+     }
+}
